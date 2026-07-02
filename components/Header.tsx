@@ -21,7 +21,7 @@ export default function Header() {
     >
       <div
         className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${
-          scrolled ? "h-16 lg:h-20" : "h-20 lg:h-24"
+          scrolled ? "h-20 lg:h-24" : "h-24 lg:h-28"
         }`}
       >
         <a
@@ -32,7 +32,7 @@ export default function Header() {
           <img
             src="/images/galloway-logo.png"
             alt={BRAND.partnerName}
-            className={`w-auto transition-all duration-300 ${scrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"}`}
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-16 lg:h-20" : "h-20 lg:h-24"}`}
           />
         </a>
 

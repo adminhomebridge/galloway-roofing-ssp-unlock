@@ -8,23 +8,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Galloway Roofing brand palette — colors sampled from their live
-        // site (gallowayroofing.com): CTA/link navy #004187, logo navy
-        // #3c5490, logo forest green #30543c. Token names kept as
-        // asDark/asRed/asGreen/asSlate to match the shared SSP template
-        // (see /lib/brand.ts) — only the values changed for this client.
+        // Galloway Roofing brand palette (per Thomas, 2026-07-02):
+        // primary blue #004188, black for footer/dark sections #020202.
+        // Token names kept as asDark/asRed/asGreen/asSlate to match the
+        // shared SSP template (see /lib/brand.ts) — only the values changed.
         asDark: {
-          DEFAULT: "#1c2b3f",
-          mid: "#243652",
-          soft: "#34496b",
-          deep: "#111a27",
+          DEFAULT: "#141414",
+          mid: "#1f1f1f",
+          soft: "#333333",
+          deep: "#020202",
           mist: "#eef1f5",
         },
         asRed: {
-          // primary CTA / link color — matches Galloway's site buttons (#004187)
-          DEFAULT: "#004187",
-          bright: "#1f66b0",
-          deep: "#00305f",
+          // primary CTA / link color — Galloway blue
+          DEFAULT: "#004188",
+          bright: "#1f67b1",
+          deep: "#00315f",
         },
         asGreen: {
           // savings/accent green — derived from the logo's hammer-handle green
@@ -47,9 +46,9 @@ const config: Config = {
         display: ['"Exo"', '"Open Sans"', "system-ui", "Arial", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 2px rgba(28,43,63,0.04), 0 12px 32px -8px rgba(28,43,63,0.14)",
-        cta: "0 12px 32px -8px rgba(0,65,135,0.5), 0 4px 12px -4px rgba(28,43,63,0.3)",
-        deep: "0 24px 64px -16px rgba(17,26,39,0.55)",
+        card: "0 1px 2px rgba(2,2,2,0.04), 0 12px 32px -8px rgba(2,2,2,0.14)",
+        cta: "0 12px 32px -8px rgba(0,65,136,0.5), 0 4px 12px -4px rgba(2,2,2,0.3)",
+        deep: "0 24px 64px -16px rgba(2,2,2,0.55)",
       },
       animation: {
         "fade-up": "fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",

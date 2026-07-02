@@ -7,7 +7,7 @@ const INPUTS = [
   {
     pct: 30,
     label: "Lower energy bills",
-    micro: "Ranked highest-impact first for your home",
+    micro: "Your roof is ranked highest-impact first for your home",
     accent: "border-t-asRed",
     chip: "bg-asRed/10 text-asRed-deep",
     icon: (
@@ -17,7 +17,7 @@ const INPUTS = [
   {
     pct: 20,
     label: "Lower insurance",
-    micro: "On qualifying upgrades like impact windows & roofing",
+    micro: "On qualifying upgrades like a new roof & impact windows",
     accent: "border-t-blue-400",
     chip: "bg-blue-50 text-blue-600",
     icon: (
@@ -27,7 +27,7 @@ const INPUTS = [
   {
     pct: 15,
     label: "More home value",
-    micro: "Added equity from the right projects",
+    micro: "A new roof returns more value than almost any other upgrade",
     accent: "border-t-amber-400",
     chip: "bg-amber-50 text-amber-600",
     icon: (
@@ -48,15 +48,16 @@ export default function TrustStrip() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-sm font-bold text-asRed-deep uppercase tracking-wider mb-3">
-            What your plan is worth
+            What your roof upgrade is worth
           </p>
           <h2 className="text-3xl lg:text-5xl font-black text-asDark leading-tight mb-4 text-balance">
-            We run the math. You keep the{" "}
+            We run the math on your roof. You keep the{" "}
             <span className="highlight-red">savings.</span>
           </h2>
           <p className="text-lg text-slateWarm leading-relaxed max-w-2xl mx-auto">
-            Your plan scores all 16 upgrades on three returns, then turns them
-            into one number — calculated for your exact home.
+            Starting with your roof, your plan scores all 16 upgrades on three
+            returns, then turns them into one number — calculated for your
+            exact home.
           </p>
         </div>
 

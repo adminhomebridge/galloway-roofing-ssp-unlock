@@ -17,8 +17,8 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-asDark/95 backdrop-blur-md border-b border-white/10 shadow-lg"
-          : "bg-gradient-to-b from-black/30 via-black/10 to-transparent border-b border-transparent"
+          ? "bg-asDark-deep/95 backdrop-blur-md border-b border-white/10 shadow-lg"
+          : "bg-gradient-to-b from-black/80 via-black/50 to-transparent border-b border-transparent"
       }`}
     >
       <div
@@ -34,7 +34,7 @@ export default function Header() {
           <img
             src="/images/galloway-logo.png"
             alt={BRAND.partnerName}
-            className={`w-auto transition-all duration-300 ${scrolled ? "h-9" : "h-11 lg:h-12"}`}
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-11" : "h-14 lg:h-16"}`}
           />
         </a>
 

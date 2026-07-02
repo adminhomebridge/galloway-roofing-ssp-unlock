@@ -15,6 +15,7 @@
 
 import { useReveal, useCountUp } from "./hooks";
 import Reveal from "./Reveal";
+import UnlockForm from "./UnlockForm";
 
 const STATS = [
   { target: 30, suffix: "+", label: "Years in Southwest Florida" },
@@ -26,18 +27,22 @@ const MATERIALS = [
   {
     name: "Asphalt Shingles",
     detail: "GAF Timberline with StainGuard Plus & LayerLock wind resistance.",
+    img: "/images/roofing-asphalt-shingles.jpg",
   },
   {
     name: "Metal Roofing",
     detail: "Tilcor & Decra stone-coated steel — 50-yr warranty, 120 mph rating.",
+    img: "/images/roofing-metal.jpg",
   },
   {
     name: "Concrete & Clay Tile",
     detail: "Eagle & Crown tile systems, built for coastal conditions.",
+    img: "/images/roofing-tile.jpg",
   },
   {
     name: "TPO & Commercial",
     detail: "TPO/EPDM membrane systems for flat and low-slope roofs.",
+    img: "/images/roofing-commercial-tpo.jpg",
   },
 ];
 
@@ -102,9 +107,15 @@ export default function RoofingSpotlight() {
               </h3>
               <div className="grid sm:grid-cols-2 gap-3.5">
                 {MATERIALS.map((m) => (
-                  <div key={m.name} className="bg-white rounded-xl p-4 shadow-card border border-asDark/8">
-                    <div className="text-sm font-black text-asDark mb-1">{m.name}</div>
-                    <p className="text-xs text-slateWarm leading-relaxed">{m.detail}</p>
+                  <div key={m.name} className="bg-white rounded-xl overflow-hidden shadow-card border border-asDark/8">
+                    <div className="relative h-28">
+                      <img src={m.img} alt={m.name} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-asDark/70 via-asDark/10 to-transparent" />
+                    </div>
+                    <div className="p-4">
+                      <div className="text-sm font-black text-asDark mb-1">{m.name}</div>
+                      <p className="text-xs text-slateWarm leading-relaxed">{m.detail}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -129,13 +140,12 @@ export default function RoofingSpotlight() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#unlock"
-                className="mt-6 inline-flex items-center gap-2 bg-asRed hover:bg-asRed-deep text-white font-bold px-5 py-3 rounded-xl text-sm transition shadow-cta hover:-translate-y-0.5"
-              >
-                See my roof upgrade options
-                <span aria-hidden>→</span>
-              </a>
+              <div className="mt-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-white/60 mb-2">
+                  See my roof upgrade options
+                </p>
+                <UnlockForm variant="onDark" stacked hideNote />
+              </div>
             </div>
           </Reveal>
         </div>

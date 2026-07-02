@@ -38,14 +38,14 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28 bg-asSlate text-white">
+    <section className="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-asDark-deep via-asDark-deep to-black text-white">
       <div className="absolute inset-0 bg-grain opacity-15 pointer-events-none" />
-      <div className="absolute top-1/3 -right-24 w-96 h-96 bg-asRed/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 -right-24 w-96 h-96 bg-asRed/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-14">
-            <p className="text-sm font-bold text-asRed uppercase tracking-wider mb-3">
+            <p className="text-sm font-bold text-asRed-bright uppercase tracking-wider mb-3">
               How unlocking works
             </p>
             <h2 className="text-3xl lg:text-5xl font-black leading-tight text-balance">
@@ -59,7 +59,7 @@ export default function HowItWorks() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-7">
           {STEPS.map((step, idx) => (
             <Reveal key={step.n} delay={idx * 110}>
-              <div className="relative bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden h-full">
+              <div className="relative bg-asRed/10 border border-asRed/30 rounded-2xl overflow-hidden h-full">
                 <div className="relative h-40">
                   <img src={step.img} alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-asDark via-asDark/45 to-asDark/15" />

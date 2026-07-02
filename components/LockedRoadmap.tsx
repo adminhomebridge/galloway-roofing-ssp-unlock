@@ -17,9 +17,9 @@ type Category = { id: string; label: string; products: Product[] };
 const CATEGORIES: Category[] = [
   {
     id: "energy",
-    label: "⚡ Energy Efficiency",
+    label: "🏠 Roofing & Energy Efficiency",
     products: [
-      { name: "New Roof", img: "/images/roof.png", badge: "Most Popular", cost: "$104/mo", energy: "10–20%", roi: "10–15 yrs", hook: "Protect your home and cut cooling bills." },
+      { name: "New Roof", img: "/images/roof.png", badge: "Your Match", cost: "$104/mo", energy: "10–20%", roi: "10–15 yrs", hook: "Protect your home and cut cooling bills." },
       { name: "New Windows", img: "/images/windows.png", badge: null, cost: "$69/mo", energy: "10–13%", roi: "12–20 yrs", hook: "Quieter rooms, warmer winters, lower bills." },
       { name: "Air Conditioning", img: "/images/ac.png", badge: null, cost: "$42/mo", energy: "10–25%", roi: "5–10 yrs", hook: "Reliable cool air for less every month." },
       { name: "Attic Insulation", img: "/images/insulation.png", badge: "High ROI", cost: "$28/mo", energy: "15–30%", roi: "3–7 yrs", hook: "The cheapest way to slash energy bills." },
@@ -59,28 +59,29 @@ const CATEGORIES: Category[] = [
 
 export default function LockedRoadmap() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28 bg-brand-section text-white">
+    <section className="relative overflow-hidden py-20 lg:py-28 bg-asRed text-white">
       <div className="absolute inset-0 bg-grain opacity-15 pointer-events-none" />
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-asRed/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-asRed/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-asDark/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* header */}
         <Reveal>
           <div className="text-center mb-6">
-            <p className="text-sm font-bold text-asRed uppercase tracking-wider mb-3">
+            <p className="text-sm font-bold text-white uppercase tracking-wider mb-3">
               What&apos;s inside your plan
             </p>
             <h2 className="text-3xl lg:text-5xl font-black leading-tight mb-4 text-balance max-w-3xl mx-auto">
-              All 16 upgrades,{" "}
-              <span className="highlight-red text-white">priced for your home.</span>
+              Your roof, plus 15 more upgrades,{" "}
+              <span className="highlight-green text-white">priced for your home.</span>
             </h2>
-            <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              See what each upgrade saves and how fast it pays back. Your exact
-              monthly price is already calculated — enter your address to reveal it.
+            <p className="text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
+              We start with the roof upgrade your home is matched for, then show
+              every other upgrade too. Your exact monthly price is already
+              calculated — enter your address to reveal it.
             </p>
-            <p className="mt-4 inline-flex items-center gap-2 text-sm text-white/55">
-              <svg className="w-4 h-4 text-asRed-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+            <p className="mt-4 inline-flex items-center gap-2 text-sm text-white/70">
+              <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
                 <rect x="3" y="6" width="18" height="12" rx="2" />
                 <path strokeLinecap="round" d="M3 10h18" />
               </svg>
@@ -97,7 +98,7 @@ export default function LockedRoadmap() {
               0 of 16 prices unlocked
             </span>
             <div className="hidden sm:block w-40 h-2 rounded-full bg-white/10 overflow-hidden">
-              <div className="h-full w-0 bg-asRed rounded-full" />
+              <div className="h-full w-0 bg-white rounded-full" />
             </div>
           </div>
         </Reveal>
@@ -228,7 +229,7 @@ function Lock() {
 
 function LockSmall() {
   return (
-    <svg className="w-4 h-4 text-asRed flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <svg className="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
       <path d="M12 2a5 5 0 00-5 5v3H6a1 1 0 00-1 1v9a1 1 0 001 1h12a1 1 0 001-1v-9a1 1 0 00-1-1h-1V7a5 5 0 00-5-5zm3 8H9V7a3 3 0 016 0v3z" />
     </svg>
   );

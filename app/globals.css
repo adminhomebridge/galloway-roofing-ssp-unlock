@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --as-dark: #1c2b3f;
+  --as-dark-mid: #243652;
+  --as-dark-soft: #34496b;
+  --as-dark-deep: #111a27;
+  --as-red: #004187;
+  --as-red-bright: #1f66b0;
+  --as-slate: #2c3a47;
+  --as-slate-deep: #25313c;
+  --cream: #f7f7f9;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--as-dark-deep);
+  font-family: "Open Sans", system-ui, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display face — Galloway's bold headline character (matches their live site) */
+h1, h2, h3, h4, .font-display {
+  font-family: "Exo", "Open Sans", system-ui, Arial, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-grain {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+
+/* Branded section background — house-icon pattern tiled tone-on-tone on slate */
+.bg-brand-pattern {
+  background-color: #2c3a47;
+  background-image: url("/images/brand-bg-pattern.png");
+  background-size: 64px 64px;
+  background-repeat: repeat;
+}
+
+/* Branded section background — full designed image (badges + center glow) */
+.bg-brand-section {
+  background-color: #2f3e4b;
+  background-image: url("/images/section-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Green highlight marker effect for key words */
+.highlight-red {
+  background: linear-gradient(
+    180deg,
+    transparent 58%,
+    rgba(0, 65, 135, 0.35) 58%
+  );
+  padding: 0 0.1em;
+}
+
+.highlight-green {
+  background: linear-gradient(
+    180deg,
+    transparent 58%,
+    rgba(31, 157, 87, 0.35) 58%
+  );
+  padding: 0 0.1em;
+}
+
+/* ============================================================
+   SIGNATURE: "locked value" treatment
+   The whole page teases a plan that already exists for this
+   homeowner. Real numbers are obscured until they unlock.
+   ============================================================ */
+
+/* Redacted number — a frosted bar that stands in for a real figure */
+.locked-value {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(32, 36, 46, 0.12) 0%,
+    rgba(32, 36, 46, 0.06) 50%,
+    rgba(32, 36, 46, 0.12) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.8s linear infinite;
+  color: transparent;
+  user-select: none;
+}
+
+/* Same idea but tuned for dark backgrounds */
+.locked-value--dark {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.8s linear infinite;
+  color: transparent;
+  user-select: none;
+}
+
+/* Blur a real-looking value so the shape reads but the number doesn't */
+.blur-lock {
+  filter: blur(7px);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Frosted glass overlay used over the locked plan preview */
+.frost {
+  background: rgba(247, 248, 252, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Shimmer text for the green accents */
+.shimmer-red {
+  background: linear-gradient(
+    90deg,
+    #004187 0%,
+    #1f66b0 50%,
+    #004187 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Blurred REAL number — reads as "a real figure, held back" */
+.value-lock {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+.value-lock--soft {
+  filter: blur(5px);
+}
+
+/* Per-card hover cue that appears over the locked stats */
+.unlock-cue {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.group:hover .unlock-cue {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ambient "scanning" sweep across the hero roadmap card */
+.scan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(0, 65, 135, 0.12) 45%,
+    rgba(0, 65, 135, 0.18) 50%,
+    rgba(0, 65, 135, 0.12) 55%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  animation: scanSweep 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes scanSweep {
+  0% { background-position: 160% 0; }
+  100% { background-position: -160% 0; }
+}
+
+/* ── Unlock reveal overlay (the wow moment) ── */
+.unlock-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: radial-gradient(
+    120% 120% at 50% 30%,
+    rgba(44, 49, 61, 0.92) 0%,
+    rgba(20, 22, 28, 0.96) 70%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.35s ease-out forwards;
+}
+.unlock-panel {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animated padlock */
+.padlock-shackle {
+  transform-origin: 50% 60%;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.padlock--open .padlock-shackle {
+  transform: rotate(22deg) translateY(-2px);
+}
+.padlock-glow {
+  animation: pulseSoft 1.6s ease-in-out infinite;
+}
+
+/* Progress bar fill */
+.unlock-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+.unlock-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #004187, #1f66b0);
+  width: 0%;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reveal-on-scroll utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Google Places Autocomplete dropdown — match the page styling */
+.pac-container {
+  z-index: 9999;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(32, 36, 46, 0.1);
+  box-shadow: 0 24px 50px -12px rgba(20, 22, 28, 0.35);
+  margin-top: 8px;
+  padding: 4px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background: #fff;
+}
+.pac-item {
+  border: 0;
+  border-radius: 0.6rem;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #5d626d;
+  cursor: pointer;
+}
+.pac-item:hover { background: #f7f7f9; }
+.pac-item-query { color: #20242e; font-weight: 700; }
+.pac-matched { color: #20242e; }
+.pac-icon { display: none; }
+.pac-logo:after { margin: 6px 8px; }
+
+/* ── Exit-intent / lead-gen modal ── */
+.exit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90; /* above the page, below the unlock overlay (z-100) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: radial-gradient(
+    120% 120% at 50% 30%,
+    rgba(44, 49, 61, 0.55) 0%,
+    rgba(20, 22, 28, 0.8) 70%
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+.exit-panel {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: calc(100dvh - 2.5rem);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: 0 24px 64px -16px rgba(20, 22, 28, 0.55);
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -34,7 +34,7 @@ export default function Header() {
           <img
             src="/images/galloway-logo.png"
             alt={BRAND.partnerName}
-            className={`w-auto transition-all duration-300 ${scrolled ? "h-11" : "h-14 lg:h-16"}`}
+            className={`w-auto transition-all duration-300 ${scrolled ? "h-12 lg:h-14" : "h-16 lg:h-20"}`}
           />
         </a>
 

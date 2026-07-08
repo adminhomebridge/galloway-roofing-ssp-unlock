@@ -30,7 +30,7 @@ const CATEGORIES: Category[] = [
     label: "🏠 Interior Upgrades",
     products: [
       { name: "Kitchen Remodel", img: "/images/kitchen.png", badge: "Top Value", cost: "$124/mo", energy: "5–15%", roi: "10–15 yrs", hook: "The upgrade buyers pay the most for." },
-      { name: "Bathroom Remodel", img: "/images/bath.png", badge: null, cost: "$75/mo", energy: "5–10%", roi: "8–12 yrs", hook: "A spa-like bath that lifts home value." },
+      { name: "Bathroom Remodel", img: "/images/bathroom-remodel.jpg", badge: null, cost: "$75/mo", energy: "5–10%", roi: "8–12 yrs", hook: "A spa-like bath that lifts home value." },
       { name: "Flooring", img: "/images/flooring.png", badge: null, cost: "$65/mo", energy: "0%", roi: "8–12 yrs", hook: "Fresh floors that transform every room." },
       { name: "Custom Closets", img: "/images/bath.png", badge: null, cost: "$40/mo", energy: "0%", roi: "5–10 yrs", hook: "Double your storage, love your space." },
     ],
@@ -41,7 +41,7 @@ const CATEGORIES: Category[] = [
     products: [
       { name: "Exterior Painting", img: "/images/exterior.png", badge: null, cost: "$35/mo", energy: "0%", roi: "5–8 yrs", hook: "Instant curb appeal that protects siding." },
       { name: "Gutters", img: "/images/gutters.png", badge: null, cost: "$15/mo", energy: "0%", roi: "4–8 yrs", hook: "Stop water damage before it starts." },
-      { name: "Siding", img: "/images/exterior.png", badge: null, cost: "$45/mo", energy: "5–15%", roi: "10–15 yrs", hook: "A whole new look with far less upkeep." },
+      { name: "Siding", img: "/images/siding.jpg", badge: null, cost: "$45/mo", energy: "5–15%", roi: "10–15 yrs", hook: "A whole new look with far less upkeep." },
       { name: "Generator", img: "/images/generator.png", badge: "Storm Ready", cost: "$85/mo", energy: "0%", roi: "8–15 yrs", hook: "Never lose power in the next storm." },
     ],
   },
@@ -50,7 +50,7 @@ const CATEGORIES: Category[] = [
     label: "💧 Water & Health",
     products: [
       { name: "Foundation Waterproofing", img: "/images/waterproof.png", badge: null, cost: "$65/mo", energy: "0%", roi: "8–12 yrs", hook: "Keep your basement dry for good." },
-      { name: "Walk-In Bathtub", img: "/images/tub.png", badge: null, cost: "$42/mo", energy: "0%", roi: "3–5 yrs", hook: "Safe, spa-like bathing made easy." },
+      { name: "Walk-In Bathtub", img: "/images/walk-in-tub.jpg", badge: null, cost: "$42/mo", energy: "0%", roi: "3–5 yrs", hook: "Safe, spa-like bathing made easy." },
       { name: "Tankless Water Heater", img: "/images/tankless.png", badge: "High ROI", cost: "$45/mo", energy: "10–20%", roi: "6–10 yrs", hook: "Endless hot water — and lower bills." },
       { name: "Water Filtration", img: "/images/tub.png", badge: null, cost: "$30/mo", energy: "0%", roi: "5–10 yrs", hook: "Cleaner, better-tasting water on tap." },
     ],

@@ -29,7 +29,7 @@ const CATEGORIES: Category[] = [
     id: "interior",
     label: "🏠 Interior Upgrades",
     products: [
-      { name: "Kitchen Remodel", img: "/images/kitchen.png", badge: "Top Value", cost: "$124/mo", energy: "5–15%", roi: "10–15 yrs", hook: "The upgrade buyers pay the most for." },
+      { name: "Kitchen Remodel", img: "/images/kitchen-remodel.jpg", badge: "Top Value", cost: "$124/mo", energy: "5–15%", roi: "10–15 yrs", hook: "The upgrade buyers pay the most for." },
       { name: "Bathroom Remodel", img: "/images/bathroom-remodel.jpg", badge: null, cost: "$75/mo", energy: "5–10%", roi: "8–12 yrs", hook: "A spa-like bath that lifts home value." },
       { name: "Flooring", img: "/images/flooring.png", badge: null, cost: "$65/mo", energy: "0%", roi: "8–12 yrs", hook: "Fresh floors that transform every room." },
       { name: "Custom Closets", img: "/images/bath.png", badge: null, cost: "$40/mo", energy: "0%", roi: "5–10 yrs", hook: "Double your storage, love your space." },
@@ -167,15 +167,25 @@ function Card({ p }: { p: Product }) {
           alt={p.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-asDark/92 via-asDark/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-asDark/95 via-asDark/60 to-transparent" />
         {p.badge && (
           <div className="absolute top-2.5 left-2.5 bg-asRed text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
             {p.badge}
           </div>
         )}
         <div className="absolute bottom-2 left-3 right-3">
-          <div className="text-white font-black text-[15px] leading-tight">{p.name}</div>
-          <div className="text-white/75 text-[11px] leading-snug line-clamp-1">{p.hook}</div>
+          <div
+            className="text-white font-black text-[15px] leading-tight"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.85), 0 1px 8px rgba(0,0,0,0.5)" }}
+          >
+            {p.name}
+          </div>
+          <div
+            className="text-white/90 text-[11px] leading-snug line-clamp-1"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.85)" }}
+          >
+            {p.hook}
+          </div>
         </div>
       </div>
 

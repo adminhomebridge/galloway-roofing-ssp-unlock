@@ -40,7 +40,7 @@ const CATEGORIES: Category[] = [
     label: "🛡️ Exterior & Structure",
     products: [
       { name: "Exterior Painting", img: "/images/exterior-painting.jpg", badge: null, cost: "$35/mo", energy: "0%", roi: "5–8 yrs", hook: "Instant curb appeal that protects siding." },
-      { name: "Gutters", img: "/images/gutters.png", badge: null, cost: "$15/mo", energy: "0%", roi: "4–8 yrs", hook: "Stop water damage before it starts." },
+      { name: "Gutters", img: "/images/gutters.jpg", badge: null, cost: "$15/mo", energy: "0%", roi: "4–8 yrs", hook: "Stop water damage before it starts." },
       { name: "Siding", img: "/images/siding.jpg", badge: null, cost: "$45/mo", energy: "5–15%", roi: "10–15 yrs", hook: "A whole new look with far less upkeep." },
       { name: "Generator", img: "/images/generator.png", badge: "Storm Ready", cost: "$85/mo", energy: "0%", roi: "8–15 yrs", hook: "Never lose power in the next storm." },
     ],

@@ -78,6 +78,44 @@ export default function RoofingSpotlight() {
               GAF Master Elite certified, serving Southwest Florida since 2012
               with our own in-house crews — never subcontractors.
             </p>
+            <div className="relative mt-7 max-w-2xl mx-auto">
+              <div className="absolute -top-8 -right-8 w-40 h-40 bg-[#4ecde8]/60 rounded-full blur-3xl pointer-events-none animate-glow-pulse" />
+              <div
+                className="absolute -bottom-10 -left-10 w-32 h-32 bg-asRed-bright/45 rounded-full blur-3xl pointer-events-none animate-glow-pulse"
+                style={{ animationDelay: "1.8s" }}
+              />
+
+              <div className="relative overflow-hidden bg-gradient-to-br from-white to-[#eef7fb] rounded-2xl shadow-deep ring-1 ring-[#4ecde8]/30 p-6 lg:p-7">
+                <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                  <img
+                    src="/images/homebridge-logo.png"
+                    alt="Homebridge"
+                    className="h-16 sm:h-20 w-auto object-contain flex-shrink-0"
+                  />
+                  <div>
+                    <p className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-asRed-deep mb-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-transparent via-[#4ecde8]/70 to-transparent bg-[length:200%_100%] animate-shimmer-fast">
+                      <SparkIcon />
+                      AI-powered savings technology
+                    </p>
+                    <p className="text-xl font-black text-asDark leading-snug mb-1.5">
+                      Powered by Homebridge.
+                    </p>
+                    <p className="text-sm text-slateWarm leading-relaxed">
+                      Homebridge is the technology behind this Smart Savings
+                      Plan — scoring your whole home, not just your roof,
+                      across all 16 upgrades so you see the full picture
+                      before you unlock your numbers.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5 pt-5 border-t border-asDark/8 flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-2">
+                  <TechStat label="AI-powered analysis" delay={STAT_DELAYS[0]} />
+                  <TechStat label="16 upgrades scored" delay={STAT_DELAYS[1]} />
+                  <TechStat label="30-second results" delay={STAT_DELAYS[2]} />
+                </div>
+              </div>
+            </div>
           </div>
         </Reveal>
 
@@ -151,5 +189,30 @@ export default function RoofingSpotlight() {
         </div>
       </div>
     </section>
+  );
+}
+
+function SparkIcon() {
+  return (
+    <svg className="w-5 h-5 text-[#4ecde8] flex-shrink-0 animate-twinkle-big" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+      <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z" />
+    </svg>
+  );
+}
+
+const STAT_DELAYS = ["0s", "0.6s", "1.2s"];
+
+function TechStat({ label, delay = "0s" }: { label: string; delay?: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-asDark/70">
+      <span className="relative flex w-2.5 h-2.5">
+        <span
+          className="absolute inline-flex h-full w-full rounded-full bg-[#4ecde8] opacity-90 animate-ping-slow"
+          style={{ animationDelay: delay }}
+        />
+        <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-[#2C76B7]" />
+      </span>
+      {label}
+    </span>
   );
 }

@@ -25,8 +25,13 @@ export default function HeroUnlock() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-32 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="reveal is-visible min-w-0">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-asRed/40 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
-              Your plan is built and waiting
+            <div className="flex flex-wrap items-center gap-2 mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-asRed/40 rounded-full text-xs font-semibold uppercase tracking-wider">
+                Your plan is built and waiting
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs font-semibold uppercase tracking-wider text-white/80">
+                Powered by Homebridge
+              </div>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6 text-balance">
@@ -35,9 +40,10 @@ export default function HeroUnlock() {
             </h1>
 
             <p className="text-lg text-white/90 leading-relaxed mb-8 max-w-xl [text-shadow:_0_1px_12px_rgba(20,22,28,0.55)]">
-              We already matched your home to the upgrades it&apos;s ready for —
-              with the monthly cost and savings worked out for each one. Confirm
-              your address to unlock the numbers and open your plan.
+              Powered by Homebridge, your plan covers 16 upgrades across your
+              entire home — roofing, HVAC, windows, kitchen, and more — with
+              the monthly cost and savings already worked out for each one.
+              Confirm your address to unlock the numbers.
             </p>
 
             <div

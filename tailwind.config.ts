@@ -56,6 +56,11 @@ const config: Config = {
         "pulse-soft": "pulseSoft 2.5s ease-in-out infinite",
         shimmer: "shimmer 2.5s linear infinite",
         marquee: "marquee 32s linear infinite",
+        twinkle: "twinkle 2.2s ease-in-out infinite",
+        "glow-pulse": "glowPulse 4.8s ease-in-out infinite",
+        "shimmer-fast": "shimmer 3.2s linear infinite",
+        "twinkle-big": "twinkleBig 3.2s ease-in-out infinite",
+        "ping-slow": "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
       keyframes: {
         fadeUp: {
@@ -77,6 +82,18 @@ const config: Config = {
         marquee: {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        twinkle: {
+          "0%, 100%": { transform: "scale(1) rotate(0deg)", opacity: "1" },
+          "50%": { transform: "scale(1.25) rotate(15deg)", opacity: "0.75" },
+        },
+        glowPulse: {
+          "0%, 100%": { opacity: "0.35", transform: "scale(0.85)" },
+          "50%": { opacity: "1", transform: "scale(1.15)" },
+        },
+        twinkleBig: {
+          "0%, 100%": { transform: "scale(0.8) rotate(0deg)", opacity: "0.6" },
+          "50%": { transform: "scale(1.5) rotate(20deg)", opacity: "1" },
         },
       },
     },

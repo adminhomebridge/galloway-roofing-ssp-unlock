@@ -60,11 +60,12 @@ export const UNLOCK = {
   tokenParam: "t",
   autoUnlockParam: "autounlock",
 
-  // 3) FALLBACK (used only while matchEndpoint is "")
-  // Where to send people if there's no backend yet — keeps the
-  // page demoable. Default: Galloway's own free-estimate page.
-  // TODO(Thomas): confirm this is the right fallback destination.
-  fallbackUrl: "https://gallowayroofing.com/free-estimate/",
+  // 3) FALLBACK — where UNMATCHED visitors go.
+  // Drives the "Build a fresh plan" link shown when an address
+  // doesn't match, and (while matchEndpoint is "") the demo redirect.
+  // Points to Homebridge, where the homeowner can enter their details
+  // and have a Smart Savings Plan run from scratch.
+  fallbackUrl: "https://homebridge.ai/",
 };
 
 // Optional secondary CTA — fund the plan with a HELOC.

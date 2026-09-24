@@ -26,23 +26,14 @@ const STATS = [
 const MATERIALS = [
   {
     name: "Asphalt Shingles",
-    detail: "GAF Timberline with StainGuard Plus & LayerLock wind resistance.",
+    detail:
+      "GAF Timberline architectural shingles with StainGuard Plus and LayerLock technology — built for Florida wind and sun, installed by a GAF Master Elite contractor.",
     img: "/images/roofing-asphalt-shingles.jpg",
-  },
-  {
-    name: "Metal Roofing",
-    detail: "Tilcor & Decra stone-coated steel — 50-yr warranty, 120 mph rating.",
-    img: "/images/roofing-metal.jpg",
-  },
-  {
-    name: "Concrete & Clay Tile",
-    detail: "Eagle & Crown tile systems, built for coastal conditions.",
-    img: "/images/roofing-tile.jpg",
-  },
-  {
-    name: "TPO & Commercial",
-    detail: "TPO/EPDM membrane systems for flat and low-slope roofs.",
-    img: "/images/roofing-commercial-tpo.jpg",
+    benefits: [
+      "Engineered for Florida high-wind zones",
+      "StainGuard Plus algae-resistance warranty",
+      "Installed by a GAF Master Elite contractor (top 2% nationwide)",
+    ],
   },
 ];
 
@@ -136,28 +127,38 @@ export default function RoofingSpotlight() {
           </div>
         </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <h3 className="text-sm font-bold text-asDark uppercase tracking-wider mb-4">
+          What we install
+        </h3>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
           {/* materials */}
-          <Reveal>
-            <div>
-              <h3 className="text-sm font-bold text-asDark uppercase tracking-wider mb-4">
-                What we install
-              </h3>
-              <div className="grid sm:grid-cols-2 gap-3.5">
-                {MATERIALS.map((m) => (
-                  <div key={m.name} className="bg-white rounded-xl overflow-hidden shadow-card border border-asDark/8">
-                    <div className="relative h-28">
-                      <img src={m.img} alt={m.name} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-asDark/70 via-asDark/10 to-transparent" />
-                    </div>
-                    <div className="p-4">
-                      <div className="text-sm font-black text-asDark mb-1">{m.name}</div>
-                      <p className="text-xs text-slateWarm leading-relaxed">{m.detail}</p>
-                    </div>
+          <Reveal className="h-full">
+            {MATERIALS.map((m) => (
+              <div key={m.name} className="h-full bg-white rounded-2xl overflow-hidden shadow-card border border-asDark/8 flex flex-col">
+                <div className="relative flex-1 min-h-[8rem]">
+                  <img src={m.img} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-asDark/85 via-asDark/25 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-5">
+                    <div className="text-xl font-black text-white leading-tight">{m.name}</div>
                   </div>
-                ))}
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-slateWarm leading-relaxed mb-4">{m.detail}</p>
+                  {m.benefits && (
+                    <ul className="space-y-2.5">
+                      {m.benefits.map((b) => (
+                        <li key={b} className="flex items-start gap-2.5">
+                          <svg className="w-4 h-4 text-asRed flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} aria-hidden>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-asDark leading-snug">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
-            </div>
+            ))}
           </Reveal>
 
           {/* credentials */}

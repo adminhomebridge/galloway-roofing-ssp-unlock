@@ -7,7 +7,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 gap-10 md:gap-8">
           {/* brand */}
           <div className="max-w-md">
-            <img src="/images/galloway-logo.png" alt={BRAND.partnerName} className="h-32 w-auto mb-5" />
+            <img src="/images/galloway-logo.png" alt={BRAND.partnerName} className="h-32 w-auto mb-4" />
+            <p className="text-sm font-semibold text-white/80 mb-4">
+              License #CCC1335750
+            </p>
             <p className="text-sm leading-relaxed text-white/60">
               {BRAND.partnerName} builds a personalized Smart Savings Plan for
               your home — the monthly cost and savings on the upgrades your home

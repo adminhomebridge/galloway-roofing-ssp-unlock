@@ -27,12 +27,23 @@ const MATERIALS = [
   {
     name: "Asphalt Shingles",
     detail:
-      "GAF Timberline architectural shingles with StainGuard Plus and LayerLock technology — built for Florida wind and sun, installed by a GAF Master Elite contractor.",
+      "GAF Timberline architectural shingles with StainGuard Plus and LayerLock, built for Florida wind and sun.",
     img: "/images/roofing-asphalt-shingles.jpg",
     benefits: [
-      "Engineered for Florida high-wind zones",
-      "StainGuard Plus algae-resistance warranty",
-      "Installed by a GAF Master Elite contractor (top 2% nationwide)",
+      "LayerLock wind resistance",
+      "StainGuard Plus algae protection",
+      "GAF Master Elite installation",
+    ],
+  },
+  {
+    name: "Metal Roofing",
+    detail:
+      "Tilcor & Decra stone-coated steel — a 50-year, 120 mph roofing system.",
+    img: "/images/roofing-metal.jpg",
+    benefits: [
+      "50-year warranty",
+      "120 mph wind rating",
+      "Stone-coated steel system",
     ],
   },
 ];
@@ -133,32 +144,34 @@ export default function RoofingSpotlight() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
           {/* materials */}
           <Reveal className="h-full">
-            {MATERIALS.map((m) => (
-              <div key={m.name} className="h-full bg-white rounded-2xl overflow-hidden shadow-card border border-asDark/8 flex flex-col">
-                <div className="relative flex-1 min-h-[8rem]">
-                  <img src={m.img} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-asDark/85 via-asDark/25 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-5">
-                    <div className="text-xl font-black text-white leading-tight">{m.name}</div>
+            <div className="h-full flex flex-col sm:flex-row gap-4">
+              {MATERIALS.map((m) => (
+                <div key={m.name} className="sm:flex-1 bg-white rounded-2xl overflow-hidden shadow-card border border-asDark/8 flex flex-col">
+                  <div className="relative flex-1 min-h-[8rem]">
+                    <img src={m.img} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-asDark/85 via-asDark/25 to-transparent" />
+                    <div className="absolute bottom-0 left-0 p-4">
+                      <div className="text-lg font-black text-white leading-tight">{m.name}</div>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <p className="text-sm text-slateWarm leading-relaxed mb-3">{m.detail}</p>
+                    {m.benefits && (
+                      <ul className="space-y-2">
+                        {m.benefits.map((b) => (
+                          <li key={b} className="flex items-start gap-2">
+                            <svg className="w-4 h-4 text-asRed flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} aria-hidden>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="text-sm text-asDark leading-snug">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-sm text-slateWarm leading-relaxed mb-4">{m.detail}</p>
-                  {m.benefits && (
-                    <ul className="space-y-2.5">
-                      {m.benefits.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5">
-                          <svg className="w-4 h-4 text-asRed flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} aria-hidden>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm text-asDark leading-snug">{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </Reveal>
 
           {/* credentials */}

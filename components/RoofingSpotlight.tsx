@@ -20,25 +20,25 @@ import UnlockForm from "./UnlockForm";
 const STATS = [
   { target: 30, suffix: "+", label: "Years in Southwest Florida" },
   { target: 30000, suffix: "+", label: "Roofing projects completed" },
-  { target: 62, suffix: "", label: "Team members, in-house" },
+  { target: 62, suffix: "", label: "Team members" },
 ];
 
 const MATERIALS = [
   {
     name: "Asphalt Shingles",
     detail:
-      "GAF Timberline architectural shingles with StainGuard Plus and LayerLock, built for Florida wind and sun.",
+      "Premium architectural asphalt shingles, built for Florida wind, sun, and storm season.",
     img: "/images/roofing-asphalt-shingles.jpg",
     benefits: [
-      "LayerLock wind resistance",
-      "StainGuard Plus algae protection",
-      "GAF Master Elite installation",
+      "Engineered high-wind resistance",
+      "Algae-resistant shingle protection",
+      "Expert precision installation",
     ],
   },
   {
     name: "Metal Roofing",
     detail:
-      "Tilcor & Decra stone-coated steel — a 50-year, 120 mph roofing system.",
+      "Durable stone-coated steel metal roofing — a 50-year, 120 mph system built for Florida.",
     img: "/images/roofing-metal.jpg",
     benefits: [
       "50-year warranty",
@@ -49,8 +49,8 @@ const MATERIALS = [
 ];
 
 const CREDENTIALS = [
-  "GAF Master Elite — top 2% of roofing contractors nationwide",
-  "Own crews on every job, never subcontractors",
+  "Uncompromising Craftsmanship: Every project is built with precision and care, ensuring long-lasting durability and exceptional results.",
+  "Client-Centered Service: From the first call to the final inspection, we're here to provide a seamless, stress-free experience that puts your satisfaction first.",
   "Full general liability & workers' comp coverage",
   "Storm damage & insurance claim specialists",
 ];
@@ -77,8 +77,8 @@ export default function RoofingSpotlight() {
               <span className="highlight-red">Galloway Roofing.</span>
             </h2>
             <p className="text-lg text-slateWarm leading-relaxed max-w-2xl mx-auto">
-              GAF Master Elite certified, serving Southwest Florida since 2012
-              with our own in-house crews — never subcontractors.
+              A licensed roofing contractor, proudly serving Southwest
+              Florida since 2012.
             </p>
             <div className="relative mt-7 max-w-2xl mx-auto">
               <div className="absolute -top-8 -right-8 w-40 h-40 bg-[#4ecde8]/60 rounded-full blur-3xl pointer-events-none animate-glow-pulse" />
@@ -155,7 +155,7 @@ export default function RoofingSpotlight() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-sm text-slateWarm leading-relaxed mb-3">{m.detail}</p>
+                    <p className="text-sm text-slateWarm leading-relaxed mb-3 min-h-[4.5rem]">{m.detail}</p>
                     {m.benefits && (
                       <ul className="space-y-2">
                         {m.benefits.map((b) => (

@@ -30,9 +30,9 @@ const MATERIALS = [
       "Premium architectural asphalt shingles, built for Florida wind, sun, and storm season.",
     img: "/images/roofing-asphalt-shingles.jpg",
     benefits: [
-      "Engineered high-wind resistance",
-      "Algae-resistant shingle protection",
-      "Expert precision installation",
+      "Rated for high winds",
+      "Algae-resistant protection",
+      "Precision installation",
     ],
   },
   {
